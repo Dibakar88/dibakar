@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibakar Chakraborty | Assistant Professor & Earth Observation Researcher</title>
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation with Cover Picture Theme */
+        header {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('cover_pic.jfif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            background: #112240;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.25rem; color: var(--secondary-color); margin-top: 1rem; }
+        p { margin-bottom: 1rem; }
+
+        /* Hero / Profile Section */
+        .hero {
+            text-align: center;
+        }
+
+        .profile-img-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Grid for Images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .image-grid img, .cert-container img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .cert-container {
+            max-width: 500px;
+            margin: 1.5rem auto 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+
+        /* Publications & Lists */
+        ul.pub-list {
+            list-style-type: none;
+        }
+
+        ul.pub-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.pub-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+    </nav>
+
+    <header>
+        <h1>Dibakar Chakraborty</h1>
+        <p class="subtitle">Assistant Professor of Geography & Environment | Earth Observation & GeoAI Researcher</p>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about" class="hero">
+            <div class="profile-img-container">
+                <img src="pro_pic.jpg" alt="Dibakar Chakraborty Profile Picture">
+            </div>
+            <h2>About Me</h2>
+            <p>
+                I am an Assistant Professor of Geography at the Directorate of Secondary and Higher Education under the Ministry of Education, Bangladesh. As a JDS Fellow, I completed my Master of Science in Environmental Science at the University of Tsukuba, Japan. My research bridges traditional geography and modern spatial data science, focusing on remote sensing, GIS, Earth observation, and disaster risk management.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/Dibakar88" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="mailto:chakraborty.dibakar@ymail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Featured Research: National-Scale HRLULC Mapping</h2>
+            <p>
+                During my Master’s research at Tsukuba University, I gained vast knowledge in satellite data analysis and interpretation. Google Earth Engine and various Python libraries were used to analyze and interpret the data. Since the deep learning model (CNN) demanded a large volume of reference data—approximately 67,000 points and various indices—we accounted for six seasonal variations.
+            </p>
+            
+            <div class="image-grid">
+                <div>
+                    <img src="Earth_Mdpi Image[8].jpg" alt="Reference Data Distribution">
+                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">Reference Data Distribution across Bangladesh</p>
+                </div>
+                <div>
+                    <img src="Earth_Mdpi Image[14].jpg" alt="HRLULC Maps 2020 vs 2023">
+                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">HRLULC Maps of Bangladesh (2020 & 2023)</p>
+                </div>
+            </div>
+
+            <p>
+                After completing this research, I became interested in the 'Prithvi-eo 2.0' model. However, the model demands high-resolution imagery, which requires significant research funding and equipment. I attempted to run the script on Google Colab using an A100 GPU, but it required a higher specification hardware configuration. Nevertheless, this initiative helped me develop my skills in running models on cloud computing platforms. My previous hands-on experience in satellite data analysis makes me confident to apply for the climate disaster project.
+            </p>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <ul class="pub-list">
+                <li>
+                    <strong>Sarker, M. M., Chakraborty, D., et al. (2025).</strong> The First National-Scale High-Resolution Land Use Land Cover Map of Bangladesh Using Multi-Temporal Optical and SAR Imagery. <em>Earth</em>, 6(4), 143. <a href="https://doi.org/10.3390/earth6040143" target="_blank">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Mondal, K. P., Islam, S. T., Sanyal, N., Shuvo, S. R. S., Mahmud, M. M., Chakraborty, D., ... & Jubaer, A. (2023).</strong> Engaging Youth in Flood Risk Management: A Citizen Science Geospatial Initiative in Bangladesh. <em>3rd International Symposium on Disaster Resilience and Sustainable Development (DRSD 2023) Proceedings</em>, Springer Nature Singapore. <a href="https://doi.org/10.1007/978-981-96-7488-6_9" target="_blank">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Chakraborty, D., Mondal, K. P., Talukdar, B. (2022).</strong> Health Impacts of Climate Change-Related Flash Flood: A Case from Bangladesh. In Trevor M. Letcher (Ed.), <em>Living with Climate Change</em>, Elsevier. <a href="https://doi.org/10.1016/B978-0-443-18515-1.00004-6" target="_blank">[DOI]</a>
+                </li>
+                <li>
+                    <strong>Chakraborty, D., Mondal, Key P., Islam, S. T., Roy, J. (2021).</strong> 2017 Flash Floods in Bangladesh: Lesson Learnt. In Pal, I., Shaw, R., Shrestha, S., Djalante, R. (Eds.), <em>Disaster Resilience and Sustainability</em>, Elsevier.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Honors & Awards Section -->
+        <section id="awards">
+            <h2>Honors & Awards</h2>
+            <div>
+                <h3>🏅 Outstanding Poster Presentation Recognition — ECRS 2026</h3>
+                <p>
+                    Recognized for an outstanding poster presentation at the 6th International Electronic Conference on Remote Sensing (ECRS 2026), held online on 19–21 October 2026 (MDPI).
+                </p>
+                <div class="cert-container">
+                    <img src="Certificate of Recognition — ECRS 2026.png" alt="ECRS 2026 Certificate of Recognition">
+                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">Certificate of Recognition — ECRS 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Institution</th>
+                    <th>Period</th>
+                </tr>
+                <tr>
+                    <td>Assistant Professor (Geography)</td>
+                    <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
+                    <td>Nov 2025 – Present</td>
+                </tr>
+                <tr>
+                    <td>Lecturer (Geography)</td>
+                    <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
+                    <td>Jun 2016 – Nov 2025</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education & Fellowships</h2>
+            <table>
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>MSc in Environmental Science</td>
+                    <td>University of Tsukuba, Japan</td>
+                    <td>JDS Fellow (2023–2025)</td>
+                </tr>
+                <tr>
+                    <td>MBA in Finance & Banking</td>
+                    <td>Jahangirnagar University, Bangladesh</td>
+                    <td>2012–2013</td>
+                </tr>
+                <tr>
+                    <td>MSc in Geography & Environment</td>
+                    <td>Jahangirnagar University, Bangladesh</td>
+                    <td>2010–2011</td>
+                </tr>
+                <tr>
+                    <td>BSc (Honours) in Geography</td>
+                    <td>Jahangirnagar University, Bangladesh</td>
+                    <td>2006–2010</td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Dibakar Chakraborty. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
