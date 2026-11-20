@@ -141,42 +141,50 @@
             display: none;
             position: fixed;
             z-index: 2000;
-            padding-top: 60px;
+            padding: 20px;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.92);
             backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal.active {
+            display: flex;
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 85%;
-            max-height: 85vh;
+            max-width: 92vw;
+            max-height: 90vh;
             border-radius: 8px;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s;
+            animation: zoomIn 0.25s ease;
             object-fit: contain;
         }
 
         @keyframes zoomIn {
-            from {transform: scale(0.9); opacity: 0;}
+            from {transform: scale(0.92); opacity: 0;}
             to {transform: scale(1); opacity: 1;}
         }
 
         .close-modal {
-            position: absolute;
+            position: fixed;
             top: 20px;
-            right: 40px;
+            right: 35px;
             color: #f1f1f1;
             font-size: 45px;
             font-weight: bold;
             transition: 0.2s;
             cursor: pointer;
             user-select: none;
+            z-index: 2010;
+            line-height: 1;
         }
 
         .close-modal:hover {
@@ -233,8 +241,101 @@
             margin: 1.5rem auto 0 auto;
         }
 
+        /* Online Training Certificates Grid */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .training-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .training-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .training-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1.414 / 1;
+            overflow: hidden;
+            background: #edf2f7;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .training-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .training-img-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(26, 54, 93, 0.85);
+            color: white;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            pointer-events: none;
+        }
+
+        .training-info {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .training-info h3 {
+            margin-top: 0;
+            margin-bottom: 0.35rem;
+            font-size: 1.08rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .training-meta {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.65rem;
+        }
+
+        .training-info p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-bottom: 0;
+            line-height: 1.55;
+        }
+
+        .expandable-img {
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
-            .image-grid {
+            .image-grid,
+            .training-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -292,6 +393,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
+        <a href="#certifications">Training</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
     </nav>
@@ -319,7 +421,7 @@
                 </div>
                 <div class="about-image">
                     <div class="profile-img-container" id="profileImgContainer" title="Click to view full size">
-                        <img src="pro_pic.jpg" alt="Dibakar Chakraborty Profile Picture" id="profileImg">
+                        <img src="pro_pic.jpg" alt="Dibakar Chakraborty Profile Picture" id="profileImg" class="expandable-img">
                     </div>
                 </div>
             </div>
@@ -376,9 +478,69 @@
                     Recognized for an outstanding poster presentation at the 6th International Electronic Conference on Remote Sensing (ECRS 2026), held online on 19–21 October 2026 (MDPI).
                 </p>
                 <div class="cert-container">
-                    <img src="Certificate of Recognition — ECRS 2026.png" alt="ECRS 2026 Certificate of Recognition">
+                    <img src="Certificate of Recognition — ECRS 2026.png" alt="ECRS 2026 Certificate of Recognition" class="expandable-img" title="Click to view full screen">
                     <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">Certificate of Recognition — ECRS 2026</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Online Training & Certifications Section -->
+        <section id="certifications">
+            <h2>Online Training & Certifications</h2>
+            <div class="training-grid">
+
+                <!-- Certificate 1: UN Maps QGIS Training -->
+                <div class="training-card">
+                    <div class="training-img-wrapper" title="Click to view full screen">
+                        <img src="QGIS_certificate.jpeg" alt="UN Maps Learning Hub QGIS Training Certificate" class="expandable-img">
+                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                    </div>
+                    <div class="training-info">
+                        <h3>QGIS Training — UN Maps Learning Hub</h3>
+                        <div class="training-meta">UN Global Service Centre & UN Mappers | Sep 13, 2026</div>
+                        <p>Covered open-source GIS workflows, FOSSGIS fundamentals, spatial data analysis, the QGIS processing toolbox, and cartographic map composition for real-world mapping.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Python for Geospatial Analyses using WaPOR Data -->
+                <div class="training-card">
+                    <div class="training-img-wrapper" title="Click to view full screen">
+                        <img src="Python_WaPOR.jpeg" alt="Python for Geospatial Analyses using WaPOR Data Certificate" class="expandable-img">
+                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                    </div>
+                    <div class="training-info">
+                        <h3>Python for Geospatial Analyses using WaPOR Data</h3>
+                        <div class="training-meta">FAO & IHE Delft Institute for Water Education | Nov 8, 2025</div>
+                        <p>Focused on programmatic geospatial data processing and water productivity assessment in Python using FAO WaPOR remote sensing datasets.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: UNU-INWEH Active & Passive Satellite Data Analysis -->
+                <div class="training-card">
+                    <div class="training-img-wrapper" title="Click to view full screen">
+                        <img src="UNU_INWEH.jpeg" alt="Active and Passive Satellite Data Analysis using Cloud Computing Certificate" class="expandable-img">
+                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                    </div>
+                    <div class="training-info">
+                        <h3>Active & Passive Satellite Data Analysis using Cloud Computing</h3>
+                        <div class="training-meta">UNU-INWEH & UN ESCAP | Water Learning Center</div>
+                        <p>Applied cloud-based processing of multi-sensor optical and SAR satellite imagery for surface water delineation and flood hazard mapping.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4: UNU-INWEH Big Data Analysis for Water-Related Applications -->
+                <div class="training-card">
+                    <div class="training-img-wrapper" title="Click to view full screen">
+                        <img src="UNU_2.jpeg" alt="Big Data Analysis for Water-Related Applications Certificate" class="expandable-img">
+                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                    </div>
+                    <div class="training-info">
+                        <h3>Big Data Analysis for Water-Related Applications</h3>
+                        <div class="training-meta">United Nations University (UNU-INWEH) | Water Learning Center</div>
+                        <p>Explored large-scale Earth observation data analytics and cloud computing workflows for hydrological monitoring and water resource management.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -440,44 +602,55 @@
 
     <!-- Full Image Modal Popup -->
     <div id="imageModal" class="image-modal">
-        <span class="close-modal">×</span>
-        <img class="modal-content" id="modalImage" alt="Profile Full View">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Full Screen View">
     </div>
 
     <footer>
         <p>© 2026 Dibakar Chakraborty. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Modal Popup -->
+    <!-- JavaScript for Full-Screen Lightbox Modal -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const modal = document.getElementById("imageModal");
-            const profileImg = document.getElementById("profileImg");
             const modalImg = document.getElementById("modalImage");
-            const closeModal = document.getElementsByClassName("close-modal")[0];
+            const closeModal = document.querySelector(".close-modal");
+            const expandableImages = document.querySelectorAll(".expandable-img");
 
-            if (profileImg && modal && modalImg) {
-                profileImg.onclick = function() {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                }
-
-                closeModal.onclick = function() {
-                    modal.style.display = "none";
-                }
-
-                modal.onclick = function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                }
-
-                document.addEventListener("keydown", function(event) {
-                    if (event.key === "Escape" && modal.style.display === "block") {
-                        modal.style.display = "none";
-                    }
-                });
+            function openModal(src, alt) {
+                modal.classList.add("active");
+                modalImg.src = src;
+                modalImg.alt = alt || "Full Screen View";
+                document.body.style.overflow = "hidden";
             }
+
+            function hideModal() {
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+
+            expandableImages.forEach(function (img) {
+                img.addEventListener("click", function () {
+                    openModal(this.src, this.alt);
+                });
+            });
+
+            if (closeModal) {
+                closeModal.addEventListener("click", hideModal);
+            }
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    hideModal();
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && modal.classList.contains("active")) {
+                    hideModal();
+                }
+            });
         });
     </script>
 
