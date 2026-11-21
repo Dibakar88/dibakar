@@ -3,653 +3,695 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibakar Chakraborty | Assistant Professor & Earth Observation Researcher</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dibakar Chakraborty | Earth Observation and Flood Hazard Research</title>
+    <meta name="description" content="Dibakar Chakraborty: Assistant Professor of Geography and JDS Fellow (MSc, University of Tsukuba). Research on satellite-based land cover mapping, deep learning, flood hazard and community resilience in Bangladesh.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dibakar Chakraborty | Earth Observation and Flood Hazard Research">
+    <meta property="og:description" content="Remote sensing, deep learning land cover mapping, flood hazard and community resilience in Bangladesh.">
+    <meta property="og:image" content="Earth_Mdpi Image[14].jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dibakar Chakraborty",
+        "jobTitle": "Assistant Professor of Geography",
+        "affiliation": "Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh",
+        "alumniOf": "University of Tsukuba",
+        "email": "mailto:chakraborty.dibakar@ymail.com",
+        "sameAs": [
+            "https://github.com/Dibakar88",
+            "https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en"
+        ]
+    }
+    </script>
+
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #319795;
-            --text-color: #2d3748;
-            --bg-color: #f7fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --ink: #1f2933;
+            --ink-soft: #52606d;
+            --navy: #15304f;
+            --link: #1d5fa8;
+            --accent: #2a7f7c;
+            --bg: #fbfbf9;
+            --paper: #ffffff;
+            --rule: #e1e4e8;
+            --tint: #f1f4f7;
+            --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+            --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --ink: #e6e9ed;
+                --ink-soft: #a7b1bc;
+                --navy: #8fb8e8;
+                --link: #8fb8e8;
+                --accent: #5fc2bd;
+                --bg: #11161c;
+                --paper: #161d25;
+                --rule: #2a3440;
+                --tint: #1b232d;
+            }
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
+            font-family: var(--sans);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--bg);
         }
 
-        /* Header & Navigation with Cover Picture Theme */
+        a { color: var(--link); text-underline-offset: 3px; }
+        a:hover { text-decoration-thickness: 2px; }
+        a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* ---------- Header ---------- */
         header {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('cover_pic.jfif');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-            position: relative;
+            background:
+                linear-gradient(rgba(14, 33, 56, 0.88), rgba(14, 33, 56, 0.88)),
+                url('cover_pic.jfif') center / cover no-repeat;
+            background-color: #0e2138;
+            color: #fff;
+            padding: 4.5rem 1rem 3.5rem;
         }
 
+        .header-inner { max-width: 760px; margin: 0 auto; }
+
+        header h1 {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 5vw, 2.9rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .role {
+            margin-top: 0.6rem;
+            font-size: 1.05rem;
+            color: #d6e0ec;
+        }
+
+        .interests {
+            margin-top: 1.1rem;
+            font-size: 0.95rem;
+            color: #c3d0df;
+        }
+
+        .interests span + span::before { content: "·"; margin: 0 0.55rem; color: #7f95ad; }
+
+        .header-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+        .btn:hover { background: rgba(255, 255, 255, 0.14); }
+        .btn.primary { background: #fff; color: #15304f; border-color: #fff; }
+        .btn.primary:hover { background: #e8eef5; }
+
+        /* ---------- Navigation ---------- */
         nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            background: #112240;
-            padding: 1rem;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 100;
+            background: var(--paper);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        nav ul {
+            list-style: none;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
             flex-wrap: wrap;
+            gap: 0.1rem 1.3rem;
         }
 
         nav a {
-            color: white;
+            display: block;
+            padding: 0.7rem 0;
+            color: var(--ink-soft);
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover { color: var(--navy); border-bottom-color: var(--accent); }
+
+        /* ---------- Content ---------- */
+        main { max-width: 760px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+        section { padding: 2.2rem 0 0.5rem; }
+
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--rule);
         }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--navy); }
 
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        h2 { font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.25rem; color: var(--secondary-color); margin-top: 1rem; }
         p { margin-bottom: 1rem; }
 
-        /* Two-Column About Section */
-        .about-grid {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
+        .about-grid { display: flex; gap: 2rem; align-items: flex-start; }
+        .about-text { flex: 1; }
 
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
+        .profile-img {
             flex-shrink: 0;
-            text-align: center;
-        }
-
-        .profile-img-container {
-            width: 200px;
-            height: 200px;
-            border-radius: 8px; /* Square shape with slight rounded corners */
+            width: 170px;
+            height: 170px;
+            border-radius: 6px;
             overflow: hidden;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--rule);
+            cursor: zoom-in;
+        }
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .interest-list { list-style: none; }
+        .interest-list li {
+            padding: 0.55rem 0 0.55rem 1.4rem;
+            position: relative;
+            border-bottom: 1px solid var(--rule);
+        }
+        .interest-list li::before {
+            content: "";
+            position: absolute;
+            left: 0.2rem;
+            top: 1.2rem;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .interest-list strong { color: var(--navy); font-weight: 600; }
+
+        .status {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.05rem 0.55rem;
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            color: var(--accent);
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            vertical-align: middle;
+            letter-spacing: 0.02em;
         }
 
-        .profile-img-container:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-
-        .profile-img-container img {
+        /* Figures */
+        .figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.4rem 0; }
+        figure img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: block;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            background: #fff;
+            cursor: zoom-in;
+        }
+        figcaption { margin-top: 0.45rem; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.45; }
+
+        /* Publications */
+        .pub-list { list-style: none; }
+        .pub-list li { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+        .pub-list li:last-child { border-bottom: none; }
+        .pub-type {
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+        }
+        .pub-title { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; line-height: 1.4; color: var(--ink); }
+        .pub-authors { font-size: 0.93rem; color: var(--ink-soft); margin-top: 0.2rem; }
+        .pub-authors strong { color: var(--ink); }
+        .pub-venue { font-size: 0.93rem; color: var(--ink-soft); }
+        .pub-note { font-size: 0.9rem; margin-top: 0.35rem; }
+        .pub-links { margin-top: 0.4rem; font-size: 0.88rem; }
+        .pub-links a { margin-right: 1rem; }
+
+        /* Honors */
+        .honor { padding: 0.4rem 0 1rem; }
+        .honor p { margin-bottom: 0.6rem; }
+
+        /* Skills */
+        .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 2rem; }
+        .skill-groups h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
+        .tags li {
+            padding: 0.2rem 0.7rem;
+            background: var(--tint);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            font-size: 0.86rem;
         }
 
-        @media (max-width: 768px) {
-            .about-grid {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .social-links {
-                justify-content: center;
-            }
+        /* Training */
+        .cert-list { display: grid; gap: 1rem; }
+        .cert { display: flex; gap: 1rem; align-items: flex-start; }
+        .cert-thumb {
+            flex-shrink: 0;
+            width: 120px;
+            aspect-ratio: 1.414 / 1;
+            overflow: hidden;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            cursor: zoom-in;
+            background: var(--tint);
+        }
+        .cert-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .cert h3 { font-size: 1rem; line-height: 1.35; }
+        .cert .meta { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin: 0.15rem 0 0.3rem; }
+        .cert p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+
+        /* Tables */
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        th, td { padding: 0.65rem 0.7rem 0.65rem 0; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+        th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-weight: 600; }
+        td:last-child, th:last-child { padding-right: 0; white-space: nowrap; }
+
+        /* Contact */
+        .contact-list { list-style: none; }
+        .contact-list li { padding: 0.3rem 0; }
+        .contact-list i { width: 1.4rem; color: var(--accent); }
+
+        footer {
+            border-top: 1px solid var(--rule);
+            padding: 1.6rem 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--ink-soft);
         }
 
-        /* Modal Lightbox for Full Image View */
+        /* Lightbox */
         .image-modal {
             display: none;
             position: fixed;
+            inset: 0;
             z-index: 2000;
             padding: 20px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.92);
             align-items: center;
             justify-content: center;
         }
-
-        .image-modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 92vw;
-            max-height: 90vh;
-            border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.25s ease;
-            object-fit: contain;
-        }
-
-        @keyframes zoomIn {
-            from {transform: scale(0.92); opacity: 0;}
-            to {transform: scale(1); opacity: 1;}
-        }
-
+        .image-modal.active { display: flex; }
+        .modal-content { max-width: 94vw; max-height: 90vh; object-fit: contain; border-radius: 6px; }
         .close-modal {
             position: fixed;
-            top: 20px;
-            right: 35px;
+            top: 14px;
+            right: 24px;
+            background: none;
+            border: none;
             color: #f1f1f1;
-            font-size: 45px;
-            font-weight: bold;
-            transition: 0.2s;
-            cursor: pointer;
-            user-select: none;
-            z-index: 2010;
+            font-size: 2.6rem;
             line-height: 1;
-        }
-
-        .close-modal:hover {
-            color: var(--accent-color);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            margin-bottom: 0;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: background 0.2s;
-        }
-
-        .social-links a:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Grid for Images */
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .image-grid img, .cert-container img {
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .cert-container {
-            max-width: 500px;
-            margin: 1.5rem auto 0 auto;
-        }
-
-        /* Online Training Certificates Grid */
-        .training-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .training-card {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .training-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .training-img-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1.414 / 1;
-            overflow: hidden;
-            background: #edf2f7;
-            border-bottom: 1px solid var(--border-color);
             cursor: pointer;
         }
+        .close-modal:hover { color: #5fc2bd; }
 
-        .training-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+        @media (max-width: 680px) {
+            .about-grid { flex-direction: column-reverse; }
+            .figure-grid, .skill-groups { grid-template-columns: 1fr; }
+            .cert { flex-direction: column; }
+            .cert-thumb { width: 100%; max-width: 280px; }
+            td:last-child, th:last-child { white-space: normal; }
         }
 
-        .training-img-wrapper:hover img {
-            transform: scale(1.02);
-        }
-
-        .zoom-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(26, 54, 93, 0.85);
-            color: white;
-            font-size: 0.78rem;
-            padding: 0.3rem 0.65rem;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            pointer-events: none;
-        }
-
-        .training-info {
-            padding: 1.25rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .training-info h3 {
-            margin-top: 0;
-            margin-bottom: 0.35rem;
-            font-size: 1.08rem;
-            color: var(--primary-color);
-            line-height: 1.4;
-        }
-
-        .training-meta {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.65rem;
-        }
-
-        .training-info p {
-            font-size: 0.9rem;
-            color: #4a5568;
-            margin-bottom: 0;
-            line-height: 1.55;
-        }
-
-        .expandable-img {
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .image-grid,
-            .training-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--primary-color);
-        }
-
-        /* Publications & Lists */
-        ul.pub-list {
-            list-style-type: none;
-        }
-
-        ul.pub-list li {
-            margin-bottom: 1.2rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        ul.pub-list li::before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--primary-color);
-            color: white;
-            margin-top: 3rem;
+        @media print {
+            nav, .header-links, .image-modal { display: none; }
+            header { background: none; color: #000; padding: 0 0 1rem; }
+            header .role, header .interests { color: #333; }
+            body { background: #fff; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#certifications">Training</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-    </nav>
-
     <header>
-        <h1>Dibakar Chakraborty</h1>
-        <p class="subtitle">Assistant Professor of Geography & Environment | Earth Observation & GeoAI Researcher</p>
+        <div class="header-inner">
+            <h1>Dibakar Chakraborty</h1>
+            <p class="role">Assistant Professor of Geography · MSc Environmental Science (University of Tsukuba, JDS Fellow)</p>
+            <p class="interests">
+                <span>Flood hazard mapping</span><span>Deep learning for land cover</span><span>SAR and optical remote sensing</span><span>Community resilience</span>
+            </p>
+            <div class="header-links">
+                <a class="btn primary" href="https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a class="btn" href="https://github.com/Dibakar88" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                <a class="btn" href="mailto:chakraborty.dibakar@ymail.com"><i class="fas fa-envelope"></i> Email</a>
+                <!-- TODO: add your ORCID, for example:
+                <a class="btn" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a>
+                -->
+            </div>
+        </div>
     </header>
 
-    <div class="container">
+    <nav aria-label="Sections">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#honors">Honors</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- About Section (Two-Column Layout) -->
+    <main>
+
         <section id="about">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        I am an Assistant Professor of Geography at the Directorate of Secondary and Higher Education under the Ministry of Education, Bangladesh. As a JDS Fellow, I completed my Master of Science in Environmental Science at the University of Tsukuba, Japan. My research bridges traditional geography and modern spatial data science, focusing on remote sensing, GIS, Earth observation, and disaster risk management.
+                        I am an Assistant Professor of Geography at the Directorate of Secondary and Higher Education under the Ministry of Education, Bangladesh. As a JDS Fellow, I completed my MSc in Environmental Science at the University of Tsukuba, Japan.
                     </p>
-                    <div class="social-links">
-                        <a href="https://github.com/Dibakar88" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                        <a href="mailto:chakraborty.dibakar@ymail.com"><i class="fas fa-envelope"></i> Email</a>
-                    </div>
+                    <p>
+                        My work connects traditional geography with spatial data science. I use satellite imagery, GIS and deep learning to map land and water, and field-based methods to understand how floods affect people's livelihoods, food security and health.
+                    </p>
                 </div>
-                <div class="about-image">
-                    <div class="profile-img-container" id="profileImgContainer" title="Click to view full size">
-                        <img src="pro_pic.jpg" alt="Dibakar Chakraborty Profile Picture" id="profileImg" class="expandable-img">
-                    </div>
+                <div class="profile-img" id="profileImg" role="button" tabindex="0" aria-label="View profile photo full size">
+                    <img src="pro_pic.jpg" alt="Portrait of Dibakar Chakraborty" class="expandable-img">
                 </div>
             </div>
         </section>
 
-        <!-- Research Section -->
-        <section id="research">
-            <h2>Featured Research: National-Scale HRLULC Mapping</h2>
-            <p>
-                During my Master’s research at Tsukuba University, I gained vast knowledge in satellite data analysis and interpretation. Google Earth Engine and various Python libraries were used to analyze and interpret the data. Since the deep learning model (CNN) demanded a large volume of reference data—approximately 67,000 points and various indices—we accounted for six seasonal variations.
-            </p>
-            
-            <div class="image-grid">
-                <div>
-                    <img src="Earth_Mdpi Image[8].jpg" alt="Reference Data Distribution">
-                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">Reference Data Distribution across Bangladesh</p>
-                </div>
-                <div>
-                    <img src="Earth_Mdpi Image[14].jpg" alt="HRLULC Maps 2020 vs 2023">
-                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">HRLULC Maps of Bangladesh (2020 & 2023)</p>
-                </div>
-            </div>
-
-            <p>
-                After completing this research, I became interested in the 'Prithvi-eo 2.0' model. However, the model demands high-resolution imagery, which requires significant research funding and equipment. I attempted to run the script on Google Colab using an A100 GPU, but it required a higher specification hardware configuration. Nevertheless, this initiative helped me develop my skills in running models on cloud computing platforms. My previous hands-on experience in satellite data analysis makes me confident to apply for the climate disaster project.
-            </p>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <ul class="pub-list">
-                <li>
-                    <strong>Sarker, M. M., Chakraborty, D., et al. (2025).</strong> The First National-Scale High-Resolution Land Use Land Cover Map of Bangladesh Using Multi-Temporal Optical and SAR Imagery. <em>Earth</em>, 6(4), 143. <a href="https://doi.org/10.3390/earth6040143" target="_blank">[DOI]</a>
-                </li>
-                <li>
-                    <strong>Mondal, K. P., Islam, S. T., Sanyal, N., Shuvo, S. R. S., Mahmud, M. M., Chakraborty, D., ... & Jubaer, A. (2023).</strong> Engaging Youth in Flood Risk Management: A Citizen Science Geospatial Initiative in Bangladesh. <em>3rd International Symposium on Disaster Resilience and Sustainable Development (DRSD 2023) Proceedings</em>, Springer Nature Singapore. <a href="https://doi.org/10.1007/978-981-96-7488-6_9" target="_blank">[DOI]</a>
-                </li>
-                <li>
-                    <strong>Chakraborty, D., Mondal, K. P., Talukdar, B. (2022).</strong> Health Impacts of Climate Change-Related Flash Flood: A Case from Bangladesh. In Trevor M. Letcher (Ed.), <em>Living with Climate Change</em>, Elsevier. <a href="https://doi.org/10.1016/B978-0-443-18515-1.00004-6" target="_blank">[DOI]</a>
-                </li>
-                <li>
-                    <strong>Chakraborty, D., Mondal, Key P., Islam, S. T., Roy, J. (2021).</strong> 2017 Flash Floods in Bangladesh: Lesson Learnt. In Pal, I., Shaw, R., Shrestha, S., Djalante, R. (Eds.), <em>Disaster Resilience and Sustainability</em>, Elsevier.
-                </li>
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <ul class="interest-list">
+                <li><strong>Flood hazard and depth.</strong> Estimating flood extent and water depth from satellite data and elevation models.</li>
+                <li><strong>Deep learning for land cover.</strong> Multi-temporal, multi-sensor classification at national scale.</li>
+                <li><strong>SAR and optical remote sensing.</strong> Combining radar and optical imagery, with cloud-based processing in Google Earth Engine.</li>
+                <li><strong>Community resilience.</strong> Linking hazard maps to livelihoods, food security and health in flood-prone areas of Bangladesh.</li>
             </ul>
         </section>
 
-        <!-- Honors & Awards Section -->
-        <section id="awards">
-            <h2>Honors & Awards</h2>
-            <div>
-                <h3>🏅 Outstanding Poster Presentation Recognition — ECRS 2026</h3>
+        <section id="research">
+            <h2>Research</h2>
+
+            <h3>Current work: flood depth estimation <span class="status">Ongoing</span></h3>
+            <p>
+                I am studying FLEXTH (<a href="https://doi.org/10.5194/nhess-24-2817-2024" target="_blank" rel="noopener">Betterle and Salamon, 2024</a>), a method that estimates flood water depth from a satellite-derived flood extent map and a digital elevation model. I am applying it to flood events in Bangladesh, with the aim of linking flood depth to community impacts such as livelihoods and health.
+            </p>
+
+            <h3 style="margin-top:1.8rem;">Master's research: a national-scale land cover map</h3>
+            <p>
+                My MSc research at the University of Tsukuba produced the first national-scale, high-resolution land use land cover (HRLULC) map of Bangladesh from multi-temporal optical and SAR imagery, with technical support from JAXA. A Convolutional Neural Network (CNN) classified the imagery. Because deep learning needs a large volume of reference data, the national map used approximately 67,000 reference points and a range of spectral indices, and it accounted for six seasonal variations. I carried out the analysis in Google Earth Engine and Python.
+            </p>
+            <!-- TODO: add one result sentence, for example the number of classes, the map resolution or the overall accuracy. -->
+
+            <div class="figure-grid">
+                <figure>
+                    <img src="Earth_Mdpi Image[8].jpg" alt="Map of the reference data points distributed across Bangladesh" class="expandable-img" loading="lazy">
+                    <figcaption>Reference data distribution across Bangladesh. Source: Sarker, Chakraborty et al. (2025), <em>Earth</em>.</figcaption>
+                </figure>
+                <figure>
+                    <img src="Earth_Mdpi Image[14].jpg" alt="High-resolution land use land cover maps of Bangladesh for 2020 and 2023" class="expandable-img" loading="lazy">
+                    <figcaption>HRLULC maps of Bangladesh, 2020 and 2023. Source: Sarker, Chakraborty et al. (2025), <em>Earth</em>.</figcaption>
+                </figure>
+            </div>
+            <!-- TODO: check the journal's reuse licence (Earth is published by MDPI) before keeping these two figures. -->
+
+            <h3 style="margin-top:1.8rem;">Foundation models and cloud computing</h3>
+            <p>
+                After this work I became interested in the Prithvi-EO 2.0 geospatial foundation model. I tested it on a Google Colab A100 GPU, but the high-resolution imagery it requires exceeded the hardware available to me. The attempt taught me to run large models on cloud computing platforms, and I would like to fine-tune such models with access to high-performance computing.
+            </p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul class="pub-list">
+                <li>
+                    <span class="pub-type">Journal article · 2025</span>
+                    <div class="pub-title">The First National-Scale High-Resolution Land Use Land Cover Map of Bangladesh Using Multi-Temporal Optical and SAR Imagery</div>
+                    <div class="pub-authors">Sarker, M. M., <strong>Chakraborty, D.</strong>, et al.</div>
+                    <div class="pub-venue"><em>Earth</em>, 6(4), 143</div>
+                    <div class="pub-links"><a href="https://doi.org/10.3390/earth6040143" target="_blank" rel="noopener">DOI / full text</a></div>
+                </li>
+                <li>
+                    <span class="pub-type">Conference paper · 2023</span>
+                    <div class="pub-title">Engaging Youth in Flood Risk Management: A Citizen Science Geospatial Initiative in Bangladesh</div>
+                    <div class="pub-authors">Mondal, K. P., Islam, S. T., Sanyal, N., Shuvo, S. R. S., Mahmud, M. M., <strong>Chakraborty, D.</strong>, … &amp; Jubaer, A.</div>
+                    <div class="pub-venue"><em>Proceedings of the 3rd International Symposium on Disaster Resilience and Sustainable Development (DRSD 2023)</em>, Springer Nature Singapore</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1007/978-981-96-7488-6_9" target="_blank" rel="noopener">DOI</a></div>
+                </li>
+                <li>
+                    <span class="pub-type">Book chapter · 2022</span>
+                    <div class="pub-title">Health Impacts of Climate Change-Related Flash Flood: A Case from Bangladesh</div>
+                    <div class="pub-authors"><strong>Chakraborty, D.</strong>, Mondal, K. P., Talukdar, B.</div>
+                    <div class="pub-venue">In T. M. Letcher (Ed.), <em>Living with Climate Change</em>, Elsevier</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1016/B978-0-443-18515-1.00004-6" target="_blank" rel="noopener">DOI</a></div>
+                </li>
+                <li>
+                    <span class="pub-type">Book chapter · 2021</span>
+                    <div class="pub-title">2017 Flash Floods in Bangladesh: Lesson Learnt</div>
+                    <div class="pub-authors"><strong>Chakraborty, D.</strong>, Mondal, K. P., Islam, S. T., Roy, J.</div>
+                    <div class="pub-venue">In I. Pal, R. Shaw, S. Shrestha, R. Djalante (Eds.), <em>Disaster Resilience and Sustainability</em>, Elsevier</div>
+                    <!-- TODO: confirm the exact published title ("Lesson Learnt" or "Lessons Learned") and add the DOI link here. -->
+                </li>
+            </ul>
+            <p style="margin-top:0.8rem; font-size:0.92rem;">Full list on <a href="https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+        </section>
+
+        <section id="honors">
+            <h2>Honors and Presentations</h2>
+            <div class="honor">
+                <h3>Outstanding Poster Presentation Recognition, ECRS 2026</h3>
+                <!-- TODO: add the title of your poster in the sentence below. -->
                 <p>
                     Recognized for an outstanding poster presentation at the 6th International Electronic Conference on Remote Sensing (ECRS 2026), held online on 19–21 October 2026 (MDPI).
                 </p>
-                <div class="cert-container">
-                    <img src="Certificate of Recognition — ECRS 2026.png" alt="ECRS 2026 Certificate of Recognition" class="expandable-img" title="Click to view full screen">
-                    <p style="font-size: 0.85rem; text-align: center; color: #666; margin-top: 0.5rem;">Certificate of Recognition — ECRS 2026</p>
+                <figure style="max-width:420px;">
+                    <img src="Certificate of Recognition — ECRS 2026.png" alt="Certificate of Recognition, ECRS 2026" class="expandable-img" loading="lazy">
+                    <figcaption>Certificate of Recognition, ECRS 2026.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill-groups">
+                <div>
+                    <h3>Remote sensing and modeling</h3>
+                    <ul class="tags">
+                        <li>Optical and SAR imagery</li>
+                        <li>Deep learning (CNN)</li>
+                        <li>Land cover classification</li>
+                        <li>Flood mapping</li>
+                        <li>FLEXTH flood depth</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tools</h3>
+                    <ul class="tags">
+                        <li>Google Earth Engine</li>
+                        <li>Python</li>
+                        <li>QGIS</li>
+                        <li>Google Colab (cloud GPU)</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Online Training & Certifications Section -->
-        <section id="certifications">
-            <h2>Online Training & Certifications</h2>
-            <div class="training-grid">
+        <section id="training">
+            <h2>Online Training and Certificates</h2>
+            <!-- TODO: add the data science course listed on your CV, with its provider and date. -->
+            <div class="cert-list">
 
-                <!-- Certificate 1: UN Maps QGIS Training -->
-                <div class="training-card">
-                    <div class="training-img-wrapper" title="Click to view full screen">
-                        <img src="QGIS_certificate.jpeg" alt="UN Maps Learning Hub QGIS Training Certificate" class="expandable-img">
-                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                <div class="cert">
+                    <div class="cert-thumb" role="button" tabindex="0" aria-label="View QGIS certificate full size">
+                        <img src="QGIS_certificate.jpeg" alt="UN Maps Learning Hub QGIS training certificate" class="expandable-img" loading="lazy">
                     </div>
-                    <div class="training-info">
-                        <h3>QGIS Training — UN Maps Learning Hub</h3>
-                        <div class="training-meta">UN Global Service Centre & UN Mappers | Sep 13, 2026</div>
-                        <p>Covered open-source GIS workflows, FOSSGIS fundamentals, spatial data analysis, the QGIS processing toolbox, and cartographic map composition for real-world mapping.</p>
+                    <div>
+                        <h3>QGIS Training, UN Maps Learning Hub</h3>
+                        <div class="meta">UN Global Service Centre and UN Mappers · Sep 13, 2026</div>
+                        <p>Open-source GIS workflows, spatial data analysis, the QGIS processing toolbox and cartographic map composition.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 2: Python for Geospatial Analyses using WaPOR Data -->
-                <div class="training-card">
-                    <div class="training-img-wrapper" title="Click to view full screen">
-                        <img src="Python_WaPOR.jpeg" alt="Python for Geospatial Analyses using WaPOR Data Certificate" class="expandable-img">
-                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                <div class="cert">
+                    <div class="cert-thumb" role="button" tabindex="0" aria-label="View Python WaPOR certificate full size">
+                        <img src="Python_WaPOR.jpeg" alt="Python for Geospatial Analyses using WaPOR Data certificate" class="expandable-img" loading="lazy">
                     </div>
-                    <div class="training-info">
+                    <div>
                         <h3>Python for Geospatial Analyses using WaPOR Data</h3>
-                        <div class="training-meta">FAO & IHE Delft Institute for Water Education | Nov 8, 2025</div>
-                        <p>Focused on programmatic geospatial data processing and water productivity assessment in Python using FAO WaPOR remote sensing datasets.</p>
+                        <div class="meta">FAO and IHE Delft Institute for Water Education · Nov 8, 2025</div>
+                        <p>Programmatic geospatial data processing and water productivity assessment in Python with FAO WaPOR datasets.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 3: UNU-INWEH Active & Passive Satellite Data Analysis -->
-                <div class="training-card">
-                    <div class="training-img-wrapper" title="Click to view full screen">
-                        <img src="UNU_INWEH.jpeg" alt="Active and Passive Satellite Data Analysis using Cloud Computing Certificate" class="expandable-img">
-                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                <div class="cert">
+                    <div class="cert-thumb" role="button" tabindex="0" aria-label="View UNU-INWEH satellite data certificate full size">
+                        <img src="UNU_INWEH.jpeg" alt="Active and Passive Satellite Data Analysis using Cloud Computing certificate" class="expandable-img" loading="lazy">
                     </div>
-                    <div class="training-info">
-                        <h3>Active & Passive Satellite Data Analysis using Cloud Computing</h3>
-                        <div class="training-meta">UNU-INWEH & UN ESCAP | Water Learning Center</div>
-                        <p>Applied cloud-based processing of multi-sensor optical and SAR satellite imagery for surface water delineation and flood hazard mapping.</p>
+                    <div>
+                        <h3>Active and Passive Satellite Data Analysis using Cloud Computing</h3>
+                        <div class="meta">UNU-INWEH and UN ESCAP · Water Learning Center</div>
+                        <p>Cloud-based processing of optical and SAR imagery for surface water delineation and flood hazard mapping.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 4: UNU-INWEH Big Data Analysis for Water-Related Applications -->
-                <div class="training-card">
-                    <div class="training-img-wrapper" title="Click to view full screen">
-                        <img src="UNU_2.jpeg" alt="Big Data Analysis for Water-Related Applications Certificate" class="expandable-img">
-                        <span class="zoom-badge"><i class="fas fa-expand"></i> Full Screen</span>
+                <div class="cert">
+                    <div class="cert-thumb" role="button" tabindex="0" aria-label="View UNU-INWEH big data certificate full size">
+                        <img src="UNU_2.jpeg" alt="Big Data Analysis for Water-Related Applications certificate" class="expandable-img" loading="lazy">
                     </div>
-                    <div class="training-info">
+                    <div>
                         <h3>Big Data Analysis for Water-Related Applications</h3>
-                        <div class="training-meta">United Nations University (UNU-INWEH) | Water Learning Center</div>
-                        <p>Explored large-scale Earth observation data analytics and cloud computing workflows for hydrological monitoring and water resource management.</p>
+                        <div class="meta">United Nations University (UNU-INWEH) · Water Learning Center</div>
+                        <p>Large-scale Earth observation analytics and cloud computing workflows for hydrological monitoring and water resource management.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience">
             <h2>Professional Experience</h2>
-            <table>
-                <tr>
-                    <th>Position</th>
-                    <th>Institution</th>
-                    <th>Period</th>
-                </tr>
-                <tr>
-                    <td>Assistant Professor (Geography)</td>
-                    <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
-                    <td>Nov 2025 – Present</td>
-                </tr>
-                <tr>
-                    <td>Lecturer (Geography)</td>
-                    <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
-                    <td>Jun 2016 – Nov 2025</td>
-                </tr>
-            </table>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Position</th><th>Institution</th><th>Period</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Assistant Professor (Geography)</td>
+                            <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
+                            <td>Nov 2025 – present</td>
+                        </tr>
+                        <tr>
+                            <td>Lecturer (Geography)</td>
+                            <td>Directorate of Secondary and Higher Education, Ministry of Education, Bangladesh</td>
+                            <td>Jun 2016 – Nov 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education">
-            <h2>Education & Fellowships</h2>
-            <table>
-                <tr>
-                    <th>Degree</th>
-                    <th>Institution</th>
-                    <th>Details</th>
-                </tr>
-                <tr>
-                    <td>MSc in Environmental Science</td>
-                    <td>University of Tsukuba, Japan</td>
-                    <td>JDS Fellow (2023–2025)</td>
-                </tr>
-                <tr>
-                    <td>MBA in Finance & Banking</td>
-                    <td>Jahangirnagar University, Bangladesh</td>
-                    <td>2012–2013</td>
-                </tr>
-                <tr>
-                    <td>MSc in Geography & Environment</td>
-                    <td>Jahangirnagar University, Bangladesh</td>
-                    <td>2010–2011</td>
-                </tr>
-                <tr>
-                    <td>BSc (Honours) in Geography</td>
-                    <td>Jahangirnagar University, Bangladesh</td>
-                    <td>2006–2010</td>
-                </tr>
-            </table>
+            <h2>Education and Fellowships</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Degree</th><th>Institution</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MSc in Environmental Science</td>
+                            <td>University of Tsukuba, Japan</td>
+                            <td>JDS Fellow, 2023–2025</td>
+                        </tr>
+                        <tr>
+                            <td>MBA in Finance and Banking</td>
+                            <td>Jahangirnagar University, Bangladesh</td>
+                            <td>2012–2013</td>
+                        </tr>
+                        <tr>
+                            <td>MSc in Geography and Environment</td>
+                            <td>Jahangirnagar University, Bangladesh</td>
+                            <td>2010–2011</td>
+                        </tr>
+                        <tr>
+                            <td>BSc (Honours) in Geography and Environment</td>
+                            <td>Jahangirnagar University, Bangladesh</td>
+                            <td>2006–2010</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-    </div>
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i><a href="mailto:chakraborty.dibakar@ymail.com">chakraborty.dibakar@ymail.com</a></li>
+                <li><i class="fas fa-graduation-cap"></i><a href="https://scholar.google.com/citations?user=Ahku9U4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/Dibakar88" target="_blank" rel="noopener">github.com/Dibakar88</a></li>            </ul>
+        </section>
 
-    <!-- Full Image Modal Popup -->
-    <div id="imageModal" class="image-modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage" alt="Full Screen View">
+    </main>
+
+    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Full-size image">
+        <button class="close-modal" aria-label="Close image">&times;</button>
+        <img class="modal-content" id="modalImage" alt="">
     </div>
 
     <footer>
-        <p>© 2026 Dibakar Chakraborty. All rights reserved.</p>
+        <p>&copy; 2026 Dibakar Chakraborty</p>
     </footer>
 
-    <!-- JavaScript for Full-Screen Lightbox Modal -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImage");
-            const closeModal = document.querySelector(".close-modal");
-            const expandableImages = document.querySelectorAll(".expandable-img");
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            var closeBtn = document.querySelector(".close-modal");
+            var lastFocus = null;
 
-            function openModal(src, alt) {
+            function openModal(img) {
+                lastFocus = document.activeElement;
+                modalImg.src = img.currentSrc || img.src;
+                modalImg.alt = img.alt || "";
                 modal.classList.add("active");
-                modalImg.src = src;
-                modalImg.alt = alt || "Full Screen View";
                 document.body.style.overflow = "hidden";
+                closeBtn.focus();
             }
 
             function hideModal() {
                 modal.classList.remove("active");
                 document.body.style.overflow = "";
+                if (lastFocus) { lastFocus.focus(); }
             }
 
-            expandableImages.forEach(function (img) {
-                img.addEventListener("click", function () {
-                    openModal(this.src, this.alt);
+            document.querySelectorAll(".expandable-img").forEach(function (img) {
+                img.addEventListener("click", function () { openModal(img); });
+            });
+
+            document.querySelectorAll('[role="button"][tabindex="0"]').forEach(function (el) {
+                el.addEventListener("keydown", function (e) {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        var img = el.querySelector("img");
+                        if (img) { openModal(img); }
+                    }
                 });
             });
 
-            if (closeModal) {
-                closeModal.addEventListener("click", hideModal);
-            }
-
-            modal.addEventListener("click", function (event) {
-                if (event.target === modal) {
-                    hideModal();
-                }
-            });
-
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape" && modal.classList.contains("active")) {
-                    hideModal();
-                }
+            closeBtn.addEventListener("click", hideModal);
+            modal.addEventListener("click", function (e) { if (e.target === modal) { hideModal(); } });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal.classList.contains("active")) { hideModal(); }
             });
         });
     </script>
